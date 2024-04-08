@@ -9,6 +9,10 @@ pub trait Zipper {
         encoder.write_all(b"Hello, World!")?;
         Ok(())
     }
+
+    fn test(&self) -> String {
+        String::from("Hello, World!")
+    }
 }
 
 #[derive(Debug)]
@@ -17,4 +21,16 @@ pub struct Zip {
     pub target_name: String, // 压缩后的文件名
 }
 
-impl Zipper for Zip {}
+impl Zipper for Zip {
+    fn test(&self) -> String {
+        println!("{}", self.zip_path);
+        String::from("Hello, World!")
+    }
+}
+
+fn test() {
+    let zip = Zip {
+        zip_path: String::from("src/core/zip.rs"),
+        target_name: String::from("zip.rs"),
+    };
+}
