@@ -1,10 +1,10 @@
-use rust_zip::core::zip::Zip;
 use rust_zip::core::zip::Zipper;
+use rust_zip::core::zip::{some_function, some_object, Zip};
 fn main() {
     let zip = Zip {
         zip_path: String::from("src/core/zip.rs"),
         target_name: String::from("zip.rs"),
     };
-    Zip::compression().unwrap();
-    zip.test();
+    // some_function(&zip);
+    some_object(&zip);
 }
