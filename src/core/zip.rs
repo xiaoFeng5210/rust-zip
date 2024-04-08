@@ -1,11 +1,13 @@
-use flate2::read::GzDecoder;
 use flate2::write::GzEncoder;
-use std::io::{Read, Write};
+use flate2::Compression;
+use std::io;
+use std::io::prelude::*;
 
 trait Zipper {
-    fn compression() {
-        let data = "hello, world";
-        let mut encoder = GzEncoder::new(Vec::new(), flate2::Compression::default());
+    fn compression() -> Result<(), std::io::Error> {
+        let mut encoder = GzEncoder::new(Vec::new(), Compression::default());
+        encoder.write_all(b"Hello, World!")?;
+        Ok(())
     }
 }
 
