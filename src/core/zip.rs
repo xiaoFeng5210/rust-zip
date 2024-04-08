@@ -3,7 +3,7 @@ use flate2::Compression;
 use std::io;
 use std::io::prelude::*;
 
-trait Zipper {
+pub trait Zipper {
     fn compression() -> Result<(), std::io::Error> {
         let mut encoder = GzEncoder::new(Vec::new(), Compression::default());
         encoder.write_all(b"Hello, World!")?;
@@ -17,4 +17,4 @@ pub struct Zip {
     pub target_name: String, // 压缩后的文件名
 }
 
-impl Zip {}
+impl Zipper for Zip {}
