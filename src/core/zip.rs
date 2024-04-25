@@ -67,6 +67,6 @@ where
 }
 
 // 特征对象, 如果特征对象有一个方法属于静态方法，那么我们不能把它变为特征对象类型
-pub fn some_object(item: &dyn Zipper) {
-    println!("{}", item.test());
-}
+// pub fn some_object(item: &dyn Zipper) {
+//     println!("{}", item.test());
+// }
