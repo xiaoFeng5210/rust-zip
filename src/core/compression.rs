@@ -1,5 +1,1 @@
-
-
-pub struct Compression {
-  
-}
+pub struct Compression {}
